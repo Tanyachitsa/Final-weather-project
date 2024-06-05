@@ -35,8 +35,11 @@ body {
   font-size: 30px;
   font-weight: bold;
 }
-.degrees {
-  font-size: 17px;
+.degrees-f {
+  font-size: 15px;
+}
+.degrees-c {
+  font-size: 25px;
 }
 .high-low-temp {
   font-size: 13px;
