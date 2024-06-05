@@ -39,9 +39,7 @@ body {
   font-size: 17px;
 }
 .high-low-temp {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+  font-size: 13px;
 }
 .temp-info {
   font-size: 16px;
