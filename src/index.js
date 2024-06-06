@@ -2,9 +2,37 @@ function updateWeather(response) {
   let tempElement = document.querySelector("#temp");
   let temperature = response.data.temperature.current;
   let cityElement = document.querySelector("#city");
-  cityElement.innerHTML = response.data.city;
+  let descriptionElement = document.querySelector("#description");
+  let skyElement = response.data.condition.description;
+  let sky = skyElement[0].toUpperCase() + skyElement.slice(1);
+  let windElement = document.querySelector("#wind");
+  let timeElement = document.querySelector("#time");
+  let date = new Date(response.data.time * 1000);
 
+  cityElement.innerHTML = response.data.city;
   tempElement.innerHTML = Math.round(temperature);
+  descriptionElement.innerHTML = sky;
+  windElement.innerHTML = `${response.data.wind.speed}km/h`;
+  timeElement.innerHTML = formatDate(date);
+}
+
+function formatDate(date) {
+  let minutes = date.getMinutes();
+  let hour = date.getHours();
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  let day = days[date.getDay()];
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+  return `${day} ${hour}:${minutes}`;
 }
 
 function cityWeather(city) {
