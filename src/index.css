@@ -30,20 +30,18 @@ body {
 
 .col.city {
   font-weight: bold;
+  font-size: 30px;
 }
 
 .temp {
-  font-size: 30px;
-  font-weight: bold;
+  font-size: 80px;
+  font-weight: bolder;
 }
 .degrees-f {
   font-size: 15px;
 }
 .degrees-c {
-  font-size: 25px;
-}
-.high-low-temp {
-  font-size: 13px;
+  font-size: 30px;
 }
 .temp-info {
   font-size: 16px;
@@ -56,7 +54,7 @@ button {
 button:hover {
   opacity: 0.7;
 }
-.two-buttons {
+.precipitation {
   border-color: #f9f7fe;
   font-size: 12px;
   margin: 40px 0px 5px 0px;
@@ -64,6 +62,18 @@ button:hover {
 .week-forecast {
   text-decoration: underline;
   text-decoration-color: #767676;
+}
+.weather-forecast {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+.icon {
+  /* width: 88px;
+  height: 88px;
+  display: block;
+  margin: 0 auto; */
+  text-align: center;
 }
 hr {
   margin: 0%;

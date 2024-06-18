@@ -48,7 +48,32 @@ function changeCity(event) {
   cityWeather(searchBox.value);
 }
 
+function displayForecast() {
+  let theDays = ["Friday", "Saturday", "Sunday", "Monday", "Tuesday"];
+  forecastHtml = "";
+
+  theDays.forEach(function (day) {
+    forecastHtml =
+      forecastHtml +
+      `
+      <div class="weather-forecast-day">
+     <div class="Day">${day}</div>
+            <h6 class="icon">⛈</h6>
+            <span class="temperatures">
+              <span class="minimum-temp"><p>19° </span> |
+                <span class="maximum-temp">
+              <strong>14°</strong></p>
+              </span>
+            </span>
+            </div>`;
+  });
+
+  let forecastElement = document.querySelector("#weather-forecast");
+  forecastElement.innerHTML = forecastHtml;
+}
+
 let searchCity = document.querySelector(".search-glass");
 searchCity.addEventListener("click", changeCity);
 
 cityWeather("London");
+displayForecast();
