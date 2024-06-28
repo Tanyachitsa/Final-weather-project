@@ -34,7 +34,7 @@ body {
 }
 
 .temp {
-  font-size: 80px;
+  font-size: 60px;
   font-weight: bolder;
 }
 .degrees-f {
@@ -45,6 +45,9 @@ body {
 }
 .temp-info {
   font-size: 16px;
+}
+.high-low-temp {
+  font-size: 13px;
 }
 button {
   transition: ease-in-out 200ms;
@@ -68,11 +71,16 @@ button:hover {
   justify-content: space-between;
   margin-top: 30px;
 }
+.day {
+  text-align: center;
+}
 .icon {
-  /* width: 88px;
+  width: 88px;
   height: 88px;
   display: block;
-  margin: 0 auto; */
+  margin: 0 auto;
+}
+.temperatures {
   text-align: center;
 }
 hr {
