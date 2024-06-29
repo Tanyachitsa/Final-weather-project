@@ -14,8 +14,27 @@ function updateWeather(response) {
   descriptionElement.innerHTML = sky;
   windElement.innerHTML = `${response.data.wind.speed}km/h`;
   timeElement.innerHTML = formatDate(date);
-
   getForecastData(response.data.city);
+
+  let wallpaperChange =
+    document.getElementById("wallpaper").style.backgroundImage;
+  if (skyElement === "clear sky") {
+    wallpaperChange = "url(../media/clear-sky.jpg)";
+  } else if (skyElement === "few clouds") {
+    wallpaperChange = "url(/../media/few-clouds.jpg)";
+  } else if (skyElement === "scattered clouds") {
+    wallpaperChange = "url(../media/scattered-clouds.jpg)";
+  } else if (skyElement === "broken clouds") {
+    wallpaperChange = "url(../media/mist.jpg)";
+  } else if (skyElement === "shower rain" && "rain") {
+    wallpaperChange = "url(../media/rain.jpg)";
+  } else if (skyElement === "snow") {
+    wallpaperChange = "url(../media/snow.jpg)";
+  } else if (skyElement === "thunderstorm") {
+    wallpaperChange = "url(../media/thunderstorm.jpg)";
+  } else {
+    wallpaperChange = "url(../media/broken-clouds.jpg)";
+  }
 }
 
 function formatDate(date) {
@@ -73,7 +92,6 @@ function getForecastData(city) {
 function displayForecast(response) {
   // console.log(response.data);
 
-  // let theDays = ["Friday", "Saturday", "Sunday", "Monday", "Tuesday"];
   let forecastHtml = "";
 
   response.data.daily.forEach(function (day, index) {
